@@ -1,0 +1,16 @@
+import React from 'react'
+import Services from './Services'
+
+
+const ServiceSection = () => {
+  return (
+    <>
+     <div className="">
+      <h2 className="container text-4xl font-bold text-blue mb-5 md:mb-8 text-center">Our Services</h2>
+      <Services />
+     </div>
+    </>
+  )
+}
+
+export default ServiceSection
