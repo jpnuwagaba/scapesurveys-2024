@@ -14,7 +14,7 @@ export type ProjectType = {
   slug: string;
 };
 
-const ProjectPage = () => {
+const index = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [project, setProject] = useState<ProjectType | null>(null);
@@ -79,4 +79,4 @@ const ProjectPage = () => {
   );
 };
 
-export default ProjectPage;
+export default index;

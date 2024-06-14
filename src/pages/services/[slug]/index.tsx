@@ -12,7 +12,7 @@ export type ServiceType = {
   imageUrl2: any;
 };
 
-const ServicePage = () => {
+const index = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [service, setService] = useState<ServiceType[]>([]);
@@ -78,4 +78,4 @@ const ServicePage = () => {
   );
 };
 
-export default ServicePage;
+export default index;

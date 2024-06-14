@@ -42,10 +42,10 @@ const Navbar = () => {
             alt="logo"
           />
           <div className="hidden lg:flex flex-row items-center gap-5 text-sm font-bold">
-            <Link className="hover:text-blue" href={"/"}>Home</Link>
-            <Link className="hover:text-blue" href={"/about"}>About Us</Link>
-            <Link className="hover:text-blue" href={"/services"}>Services</Link>
-            <Link className="hover:text-blue" href={"/projects"}>Projects</Link>
+            <Link className="hover:text-blue" href="/">Home</Link>
+            <Link className="hover:text-blue" href="about">About Us</Link>
+            <Link className="hover:text-blue" href="services">Services</Link>
+            <Link className="hover:text-blue" href="projects">Projects</Link>
           </div>
           <Link className="hidden lg:block" href={"mailto:info@scapesurveys.com"}>
             <Button>info@scapesurveys.com</Button>
@@ -65,10 +65,10 @@ const Navbar = () => {
         <div className="container flex flex-col items-center gap-4 text-sm font-bold"
             style={showMenu ? { display: "flex" } : { display: "none" }}
           >
-            <Link className="hover:text-blue" href={"/"}>Home</Link>
-            <Link className="hover:text-blue" href={"/about"}>About Us</Link>
-            <Link className="hover:text-blue" href={"/services"}>Services</Link>
-            <Link className="hover:text-blue" href={"/projects"}>Projects</Link>
+            <Link className="hover:text-blue" href="/">Home</Link>
+            <Link className="hover:text-blue" href="about">About Us</Link>
+            <Link className="hover:text-blue" href="services">Services</Link>
+            <Link className="hover:text-blue" href="projects">Projects</Link>
             <Link className="" href={"mailto:info@scapesurveys.com"}>
             <Button>info@scapesurveys.com</Button>
           </Link>

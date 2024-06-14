@@ -12,7 +12,7 @@ import Hero2 from "@/components/Hero2";
 import Link from "next/link";
 import Project from "@/components/Project";
 
-const Index = () => {
+const index = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
   const query = `*[_type == 'project']{
@@ -64,4 +64,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default index;
