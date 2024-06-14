@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/router";
 import client from "../../../../sanity/sanity.client";
 import Hero2 from "@/components/Hero2";
-import { PortableText } from "@portabletext/react";
 import Head from "next/head";
 
 export type ServiceType = {
@@ -13,7 +12,7 @@ export type ServiceType = {
   imageUrl2: any;
 };
 
-const index = () => {
+const Service = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [service, setService] = useState<ServiceType[]>([]);
@@ -28,7 +27,7 @@ const index = () => {
     "imageUrl2": serviceIcon.asset->url
   }`;
 
-  const fetchService = async (slug: string) => {
+  const fetchService = useCallback(async (slug: string) => {
     try {
       const result = await client.fetch(query, { slug });
       setService(result);
@@ -38,13 +37,13 @@ const index = () => {
       console.error("Error fetching data:", error);
       setLoading(false);
     }
-  };
+  }, [query]);
 
   useEffect(() => {
     if (slug) {
       fetchService(slug as string); // Ensure slug is string
     }
-  }, [slug]);
+  }, [slug, fetchService]);
 
   if (loading) {
     return <div>Loading...</div>; // Optionally, add a loading indicator
@@ -55,8 +54,8 @@ const index = () => {
       {service.length > 0 && (
         <>
           <Head>
-          <title>{`${service[0].name} | Scapes & Surveys Associates`}</title>
-          <meta name="description" content={service[0].details} />
+            <title>{`${service[0].name} | Scapes & Surveys Associates`}</title>
+            <meta name="description" content={service[0].details} />
             <meta property="og:title" content={service[0].name} />
             <meta property="og:description" content={service[0].details} />
             <meta property="og:image" content={service[0].imageUrl} />
@@ -79,4 +78,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Service;

@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 export type ProjectType = {
   name: string;
   category: string;
   location: string;
   details: string;
   imageUrl: any;
-  slug: string;
+  slug: { current: string };
 };
 import client from "../../../sanity/sanity.client";
 import Hero2 from "@/components/Hero2";
 import Link from "next/link";
 import Project from "@/components/Project";
 
-const index = () => {
+const Index = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
+
   const query = `*[_type == 'project']{
     _id,
     name,
@@ -24,21 +25,19 @@ const index = () => {
     slug,
   }`;
 
-  const projectsClient = async () => {
-    await client
-      .fetch(query)
-      .then((result) => {
-        setProjects(result);
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  };
+  const projectsClient = useCallback(async () => {
+    try {
+      const result = await client.fetch(query);
+      setProjects(result);
+      console.log(result);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }, [query]);
 
   useEffect(() => {
     projectsClient();
-  }, []);
+  }, [projectsClient]);
 
   return (
     <>
@@ -51,9 +50,10 @@ const index = () => {
       <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
         {projects.map((project) => (
           <Project
+            key={project.slug.current}  // Add a unique key prop
             name={project.name}
             imgSrc={project.imageUrl}
-            link={`/projects/${(project.slug as any).current}`}
+            link={`/projects/${project.slug.current}`}
             description={project.details}
             location={project.location}
             category={project.category}
@@ -64,4 +64,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
