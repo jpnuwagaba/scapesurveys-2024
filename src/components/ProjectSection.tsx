@@ -47,9 +47,9 @@ const ProjectSection = () => {
       </h2>
       <PriorityProject />
       <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
-        {projects.map((project) => (
-          <Project
-            key={project.slug.current}  // Add a unique key prop
+        {projects.map((project, index) => (
+          <div key={index}>
+            <Project
             name={project.name}
             imgSrc={project.imageUrl}
             link={`/projects/${project.slug.current}`}
@@ -57,6 +57,7 @@ const ProjectSection = () => {
             location={project.location}
             category={project.category}
           />
+          </div>
         ))}
       </div>
       <div className="container flex flex-col lg:items-end">
