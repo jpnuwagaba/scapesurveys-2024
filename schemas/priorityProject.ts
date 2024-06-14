@@ -1,4 +1,3 @@
-// priorityProject.ts
 export default {
   name: 'priorityProject',
   title: 'Priority Project',
@@ -9,30 +8,31 @@ export default {
       title: 'Project',
       type: 'reference',
       to: [{ type: 'project' }],
-      validation: (Rule: { required: () => any }) => Rule.required()
+      validation: (Rule: { required: () => any }) => Rule.required(),
     },
     {
       name: 'name',
       title: 'Name',
       type: 'string',
       readOnly: true,
-      description: 'This field is auto-generated based on the selected project and should not be filled manually.'
+      description:
+        'This field is auto-generated based on the selected project and should not be filled manually.',
     },
     {
       name: 'summary',
       title: 'Summary',
-      type:'text',
-    }
+      type: 'text',
+    },
   ],
   preview: {
     select: {
-      title: 'project.name'
+      title: 'project.name',
     },
-    prepare(selection: { title: any }) {
-      const { title } = selection
+    prepare(selection: { title?: string }) {
+      const { title } = selection;
       return {
-        title: title || 'Unnamed Project'
-      }
-    }
-  }
-}
+        title: title || 'Unnamed Project',
+      };
+    },
+  },
+};
