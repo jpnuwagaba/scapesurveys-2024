@@ -12,7 +12,7 @@ export type ServiceType = {
   imageUrl2: any;
 };
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [service, setService] = useState<ServiceType[]>([]);
@@ -26,22 +26,7 @@ const index = () => {
     "imageUrl": serviceImage.asset->url,
     "imageUrl2": serviceIcon.asset->url
   }`;
-
-  // const fetchService = useCallback(
-  //   async (slug: string) => {
-  //     try {
-  //       const result = await client.fetch(query, { slug });
-  //       setService(result);
-  //       setLoading(false);
-  //       console.log("Fetched service data:", result);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //       setLoading(false);
-  //     }
-  //   },
-  //   [query]
-  // );
-
+  
   const fetchservice = async(slug: string) => {
     try {
       const result = await client.fetch(query, { slug });
@@ -86,4 +71,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

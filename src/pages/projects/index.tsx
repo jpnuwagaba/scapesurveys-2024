@@ -13,7 +13,7 @@ import Link from "next/link";
 import Project from "@/components/Project";
 import Head from "next/head";
 
-const index = () => {
+const Index = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
   const query = `*[_type == 'project']{
@@ -76,4 +76,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

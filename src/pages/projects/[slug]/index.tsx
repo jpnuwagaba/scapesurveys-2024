@@ -14,7 +14,7 @@ export type ProjectType = {
   slug: string;
 };
 
-const index = () => {
+const Index = () => { // Renamed to start with an uppercase letter
   const router = useRouter();
   const { slug } = router.query;
   const [project, setProject] = useState<ProjectType | null>(null);
@@ -30,7 +30,7 @@ const index = () => {
     slug,
   }`;
 
-  const fetchproject = async (slug: string) => {
+  const fetchProject = async (slug: string) => {
     try {
       const data = await client.fetch(query, { slug });
       setProject(data[0]);
@@ -43,7 +43,7 @@ const index = () => {
 
   useEffect(() => {
     if (slug) {
-      fetchproject(slug as string);
+      fetchProject(slug as string);
     }
   }, [slug]);
 
@@ -53,8 +53,11 @@ const index = () => {
 
   return (
     <>
+      <Head>
+        <title>{project?.name || "Project"}</title>
+      </Head>
       <div>
-        {project && (
+        {project ? (
           <>
             <Hero2
               title={project.name}
@@ -65,11 +68,12 @@ const index = () => {
               <PortableText value={project.details} />
             </section>
           </>
+        ) : (
+          <div>No project found</div>
         )}
-        {!project && !loading && <div>No project found</div>}
       </div>
     </>
   );
 };
 
-export default index;
+export default Index;

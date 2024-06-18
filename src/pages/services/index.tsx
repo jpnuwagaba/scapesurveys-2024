@@ -3,7 +3,7 @@ import Hero2 from "@/components/Hero2";
 import Services from "@/components/Services";
 import Head from "next/head";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       <Head>
@@ -26,4 +26,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
