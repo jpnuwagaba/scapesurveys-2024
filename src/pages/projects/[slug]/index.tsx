@@ -30,7 +30,7 @@ const index = () => {
     slug,
   }`;
 
-  const fetchProject = async (slug: string) => {
+  const fetchproject = async (slug: string) => {
     try {
       const data = await client.fetch(query, { slug });
       setProject(data[0]);
@@ -43,7 +43,7 @@ const index = () => {
 
   useEffect(() => {
     if (slug) {
-      fetchProject(slug as string);
+      fetchproject(slug as string);
     }
   }, [slug]);
 
@@ -53,16 +53,9 @@ const index = () => {
 
   return (
     <>
-      {project && (
-        <>
-          <Head>
-            <title>{project.name}</title>
-            <meta name="description" content={project.details} />
-            <meta property="og:title" content={project.name} />
-            <meta property="og:description" content={project.details} />
-            <meta property="og:image" content={project.imageUrl} />
-          </Head>
-          <div>
+      <div>
+        {project && (
+          <>
             <Hero2
               title={project.name}
               subtitle={""}
@@ -71,10 +64,10 @@ const index = () => {
             <section className="container w-full py-8 md:py-12 text-lg">
               <PortableText value={project.details} />
             </section>
-          </div>
-        </>
-      )}
-      {!project && !loading && <div>No project found</div>}
+          </>
+        )}
+        {!project && !loading && <div>No project found</div>}
+      </div>
     </>
   );
 };

@@ -67,7 +67,7 @@ const CoreValues = () => {
             
             <Image
               className="w-full rounded-xl"
-              src={"/assets/workforus.jpg"}
+              src={"/assets/workwithus2.jpeg"}
               alt="our values"
               width={500}
               height={500}

@@ -11,18 +11,41 @@ export type TeamMemberType = {
 
 const Team = () => {
   const [team, setTeam] = useState<TeamMemberType[]>([]);
+  const [admin, setAdmin] = useState<TeamMemberType[]>([]);
 
-  const query = `*[_type == 'teamMember']{
+  const query = `*[_type == 'teamMember' && position == "Managing Partner"] | order(name desc){
     _id,
     name,
     position,
     "image": image.asset->url,
     isAdmin
-  } | order(isAdmin asc)`;
+  }`;
+
+  const query2 = `*[_type == 'teamMember' && position == "Surveyor"] {
+    _id,
+    name,
+    position,
+    "image": image.asset->url,
+    isAdmin
+  }`;
+
+  const adminClient = async () => {
+    try {
+      const result = await client.fetch(query);
+      setAdmin(result);
+      console.log(result);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    adminClient();
+  }, [adminClient]);
 
   const teamClient = async () => {
     try {
-      const result = await client.fetch(query);
+      const result = await client.fetch(query2);
       setTeam(result);
       console.log(result);
     } catch (error) {
@@ -49,6 +72,21 @@ const Team = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-12">
+          {admin.map((member, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg">
+              <img
+                className="h-[280px] w-full rounded-t-lg object-cover"
+                src={member.image}
+                alt={member.name}
+                width={400}
+                height={400}
+              />
+              <div className="p-4 bg-blue text-white rounded-b-lg">
+                <h3 className="text-xl font-bold">{member.name}</h3>
+                <p className="text-gray-200">{member.position}</p>
+              </div>
+            </div>
+          ))}
           {team.map((member, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg">
               <img

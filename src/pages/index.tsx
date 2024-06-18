@@ -4,20 +4,17 @@ import Clients from "@/components/Clients";
 import ServiceSection from "@/components/ServiceSection";
 import ProjectSection from "@/components/ProjectSection";
 import CoreValues from "@/components/CoreValues";
-import Head from "next/head";
+import { Metadata, ResolvingMetadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Scapes & Surveys Associates",
+  description: "Scapes & Surveys Associates is a Land Surveying firm based in Uganda",
+};
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Scapes & Surveys Associates</title>
-        <link rel="icon" href="/assets/logo.png" />
-        <meta
-          name="description"
-          content="Scapes & Surveys Associates is a Land Surveying firm based in Uganda"
-        />
-        <meta name="keywords" content="Scapes, Surveys, Associates" />
-      </Head>
+    <>      
       <main className={``}>
         <div className="grid grid-cols-1 gap-12 md:gap-24">
           <Hero />

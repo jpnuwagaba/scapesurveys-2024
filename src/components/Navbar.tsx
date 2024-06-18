@@ -7,7 +7,7 @@ import { AlignJustify, X } from "lucide-react";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [navbarPadding, setNavbarPadding] = useState("py-4");
-  const [navbarBg, setNavbarBg] = useState("bg-white/90")
+  const [navbarBg, setNavbarBg] = useState("bg-white/90");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,25 +29,41 @@ const Navbar = () => {
     };
   }, []);
 
-
   return (
     <>
-      <div className={`fixed ${navbarBg} w-full z-50 transition-all duration-300 ease-in-out`}>
-        <div className={`container flex flex-row items-center justify-between ${navbarPadding} transition-all duration-300 ease-in-out`}>
-          <Image
-            src="/assets/logo.png"
-            width={100}
-            height={100}
-            className="w-16 md:w-24"
-            alt="logo"
-          />
+      <div
+        className={`fixed ${navbarBg} w-full z-50 transition-all duration-300 ease-in-out`}
+      >
+        <div
+          className={`container flex flex-row items-center justify-between ${navbarPadding} transition-all duration-300 ease-in-out`}
+        >
+          <Link href={"/"}>
+            <Image
+              src="/assets/logo.png"
+              width={100}
+              height={100}
+              className="w-16 md:w-24"
+              alt="logo"
+            />
+          </Link>
           <div className="hidden lg:flex flex-row items-center gap-5 text-sm font-bold">
-            <Link className="hover:text-blue" href="/">Home</Link>
-            <Link className="hover:text-blue" href="about">About Us</Link>
-            <Link className="hover:text-blue" href="services">Services</Link>
-            <Link className="hover:text-blue" href="projects">Projects</Link>
+            <Link className="hover:text-blue" href="/" >
+              Home
+            </Link>
+            <Link className="hover:text-blue" href="/about" >
+              About Us
+            </Link>
+            <Link className="hover:text-blue" href="/services" >
+              Services
+            </Link>
+            <Link className="hover:text-blue" href="/projects" >
+              Projects
+            </Link>
           </div>
-          <Link className="hidden lg:block" href={"mailto:info@scapesurveys.com"}>
+          <Link
+            className="hidden lg:block"
+            href="mailto:info@scapesurveys.com"            
+          >
             <Button>info@scapesurveys.com</Button>
           </Link>
           <div
@@ -60,19 +76,27 @@ const Navbar = () => {
               <AlignJustify color="#2b388f" />
             )}
           </div>
-          
         </div>
-        <div className="container flex flex-col items-center gap-4 text-sm font-bold"
-            style={showMenu ? { display: "flex" } : { display: "none" }}
-          >
-            <Link className="hover:text-blue" href="/">Home</Link>
-            <Link className="hover:text-blue" href="about">About Us</Link>
-            <Link className="hover:text-blue" href="services">Services</Link>
-            <Link className="hover:text-blue" href="projects">Projects</Link>
-            <Link className="" href={"mailto:info@scapesurveys.com"}>
+        <div
+          className="container flex flex-col items-center gap-4 text-sm font-bold"
+          style={showMenu ? { display: "flex" } : { display: "none" }}
+        >
+          <Link className="hover:text-blue" href="/" >
+            Home
+          </Link>
+          <Link className="hover:text-blue" href="/about" >
+            About Us
+          </Link>
+          <Link className="hover:text-blue" href="/services" >
+            Services
+          </Link>
+          <Link className="hover:text-blue" href="/projects" >
+            Projects
+          </Link>
+          <Link href="mailto:info@scapesurveys.com" >
             <Button>info@scapesurveys.com</Button>
           </Link>
-          </div>
+        </div>
       </div>
     </>
   );

@@ -25,7 +25,7 @@ const PriorityProject = () => {
     summary
   }`;
 
-  const priorityProjectClient = async () => {
+  const priorityprojectclient = async () => {
     try {
       const { project: { name, category, location, slug, "imageUrl": imageUrl }, summary, } = await client.fetch(query);
       setPriorityProject({ name, category, location, summary, imageUrl, slug });
@@ -36,7 +36,7 @@ const PriorityProject = () => {
   };
   
   useEffect(() => {
-    priorityProjectClient();
+    priorityprojectclient();
   }, []);
 
   if (!priorityProject) {

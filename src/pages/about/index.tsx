@@ -1,10 +1,20 @@
 import Hero2 from "@/components/Hero2";
 import Team from "@/components/Team";
 import React from "react";
+import Head from "next/head";
 
 const index = () => {
   return (
     <>
+      <Head>
+        <title>About Us | Scapes & Surveys Associates</title>
+        <link rel="icon" href="/assets/logo.png" />
+        <meta
+          name="description"
+          content="Scapes & Surveys Associates is a Land Surveying firm based in Uganda"
+        />
+        <meta name="keywords" content="Scapes, Surveys, Associates" />
+      </Head>
       <Hero2
         bgImage="assets/energy.jpg"
         title="About Us"

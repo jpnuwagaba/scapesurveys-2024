@@ -26,6 +26,7 @@
     "react-dom": "^18",
     "react-portable-text": "^0.6.0",
     "sanity": "^3.44.0",
+    "swr": "^2.2.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

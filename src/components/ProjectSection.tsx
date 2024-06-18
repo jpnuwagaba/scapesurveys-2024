@@ -26,15 +26,17 @@ const ProjectSection = () => {
     slug,
   }`;
 
-  const projectsClient = useCallback(async () => {
-    try {
-      const result = await client.fetch(query);
-      setProjects(result.slice(0, 3));
-      console.log(result);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }, [query]);
+  const projectsClient = async () => {
+    await client
+      .fetch(query)
+      .then((result) => {
+        setProjects(result.slice(0, 3));
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
   useEffect(() => {
     projectsClient();
@@ -50,13 +52,13 @@ const ProjectSection = () => {
         {projects.map((project, index) => (
           <div key={index}>
             <Project
-            name={project.name}
-            imgSrc={project.imageUrl}
-            link={`/projects/${project.slug.current}`}
-            description={project.details}
-            location={project.location}
-            category={project.category}
-          />
+              name={project.name}
+              imgSrc={project.imageUrl}
+              link={`/projects/${project.slug.current}`}
+              description={project.details}
+              location={project.location}
+              category={project.category}
+            />
           </div>
         ))}
       </div>

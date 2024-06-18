@@ -27,7 +27,22 @@ const index = () => {
     "imageUrl2": serviceIcon.asset->url
   }`;
 
-  const fetchService = useCallback(async (slug: string) => {
+  // const fetchService = useCallback(
+  //   async (slug: string) => {
+  //     try {
+  //       const result = await client.fetch(query, { slug });
+  //       setService(result);
+  //       setLoading(false);
+  //       console.log("Fetched service data:", result);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //       setLoading(false);
+  //     }
+  //   },
+  //   [query]
+  // );
+
+  const fetchservice = async(slug: string) => {
     try {
       const result = await client.fetch(query, { slug });
       setService(result);
@@ -37,13 +52,13 @@ const index = () => {
       console.error("Error fetching data:", error);
       setLoading(false);
     }
-  }, [query]);
+  }
 
   useEffect(() => {
     if (slug) {
-      fetchService(slug as string); // Ensure slug is string
+      fetchservice(slug as string); // Ensure slug is string
     }
-  }, [slug, fetchService]);
+  }, [slug, fetchservice]);
 
   if (loading) {
     return <div>Loading...</div>; // Optionally, add a loading indicator
@@ -51,16 +66,9 @@ const index = () => {
 
   return (
     <>
-      {service.length > 0 && (
-        <>
-          <Head>
-            <title>{`${service[0].name} | Scapes & Surveys Associates`}</title>
-            <meta name="description" content={service[0].details} />
-            <meta property="og:title" content={service[0].name} />
-            <meta property="og:description" content={service[0].details} />
-            <meta property="og:image" content={service[0].imageUrl} />
-          </Head>
-          <div>
+      <div>
+        {service.length > 0 && (
+          <>
             <Hero2
               title={service[0].name}
               subtitle={""}
@@ -70,10 +78,10 @@ const index = () => {
               <p className="text-lg">{service[0].details}</p>
               {/* <PortableText value={service[0].details} /> */}
             </section>
-          </div>
-        </>
-      )}
-      {service.length === 0 && !loading && <div>No service found</div>}
+          </>
+        )}
+        {service.length === 0 && !loading && <div>No service found</div>}
+      </div>
     </>
   );
 };

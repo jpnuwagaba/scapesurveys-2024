@@ -11,6 +11,7 @@ import client from "../../../sanity/sanity.client";
 import Hero2 from "@/components/Hero2";
 import Link from "next/link";
 import Project from "@/components/Project";
+import Head from "next/head";
 
 const index = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
@@ -25,15 +26,17 @@ const index = () => {
     slug,
   }`;
 
-  const projectsClient = useCallback(async () => {
-    try {
-      const result = await client.fetch(query);
-      setProjects(result);
-      console.log(result);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }, [query]);
+  const projectsClient = async () => {
+    await client
+      .fetch(query)
+      .then((result) => {
+        setProjects(result);
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
 
   useEffect(() => {
     projectsClient();
@@ -41,6 +44,15 @@ const index = () => {
 
   return (
     <>
+      <Head>
+        <title>Projects | Scapes & Surveys Associates</title>
+        <link rel="icon" href="/assets/logo.png" />
+        <meta
+          name="description"
+          content="Scapes & Surveys Associates is a Land Surveying firm based in Uganda"
+        />
+        <meta name="keywords" content="Scapes, Surveys, Associates" />
+      </Head>
       <Hero2
         bgImage="assets/nic2.jpeg"
         title="Our Projects"
@@ -50,7 +62,7 @@ const index = () => {
       <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
         {projects.map((project) => (
           <Project
-            key={project.slug.current}  // Add a unique key prop
+            key={project.slug.current} // Add a unique key prop
             name={project.name}
             imgSrc={project.imageUrl}
             link={`/projects/${project.slug.current}`}
