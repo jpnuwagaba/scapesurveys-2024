@@ -13,7 +13,7 @@ export default {
       title: 'Image',
       type: 'image'
     },
-    {
+    { 
       name: 'category',
       title: 'Category',
       type: 'string',

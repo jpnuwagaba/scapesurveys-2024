@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import client from "../../../../sanity/sanity.client";
 import Hero2 from "@/components/Hero2";
 import Head from "next/head";
+import { PortableText } from "@portabletext/react";
 
 export type ServiceType = {
   name: string;
@@ -15,8 +16,8 @@ export type ServiceType = {
 const Index = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const [service, setService] = useState<ServiceType[]>([]);
-  const [loading, setLoading] = useState(true); // To handle loading state
+  const [service, setService] = useState<ServiceType | null>(null);
+  const [loading, setLoading] = useState(true);
 
   const query = `*[_type == "service" && slug.current == $slug]{
     _id,
@@ -26,46 +27,49 @@ const Index = () => {
     "imageUrl": serviceImage.asset->url,
     "imageUrl2": serviceIcon.asset->url
   }`;
-  
-  const fetchservice = async(slug: string) => {
+
+  const fetchService = async (slug: string) => {
     try {
       const result = await client.fetch(query, { slug });
-      setService(result);
+      setService(result[0]);
       setLoading(false);
-      console.log("Fetched service data:", result);
+      console.log("Fetched service data:", result[0]);
     } catch (error) {
       console.error("Error fetching data:", error);
       setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     if (slug) {
-      fetchservice(slug as string); // Ensure slug is string
+      fetchService(slug as string);
     }
-  }, [slug, fetchservice]);
+  }, [slug]);
 
   if (loading) {
-    return <div>Loading...</div>; // Optionally, add a loading indicator
+    return <div>Loading...</div>;
   }
 
   return (
     <>
+      <Head>
+        <title>{service?.name || "Service"}</title>
+      </Head>
       <div>
-        {service.length > 0 && (
+        {service ? (
           <>
             <Hero2
-              title={service[0].name}
+              title={service.name}
               subtitle={""}
-              bgImage={`${service[0].imageUrl}`}
+              bgImage={`${service.imageUrl}`}
             />
             <section className="container w-full py-8 md:py-12">
-              <p className="text-lg">{service[0].details}</p>
-              {/* <PortableText value={service[0].details} /> */}
+              <PortableText value={service.details} />
             </section>
           </>
+        ) : (
+          <div>No service found</div>
         )}
-        {service.length === 0 && !loading && <div>No service found</div>}
       </div>
     </>
   );
