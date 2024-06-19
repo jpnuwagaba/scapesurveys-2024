@@ -55,6 +55,12 @@ const Index = () => { // Renamed to start with an uppercase letter
     <>
       <Head>
         <title>{project?.name || "Project"}</title>
+        <link rel="icon" href="/assets/logo.png" />
+        <meta
+          name="description"
+          content="Scapes & Surveys Associates is a Land Surveying firm based in Uganda"
+        />
+        <meta name="keywords" content="Scapes, Surveys, Associates" />
       </Head>
       <div>
         {project ? (

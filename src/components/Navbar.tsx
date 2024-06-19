@@ -47,23 +47,20 @@ const Navbar = () => {
             />
           </Link>
           <div className="hidden lg:flex flex-row items-center gap-5 text-sm font-bold">
-            <Link className="hover:text-blue" href="/" >
+            <Link className="hover:text-blue" href="/">
               Home
             </Link>
-            <Link className="hover:text-blue" href="/about" >
+            <Link className="hover:text-blue" href="/about">
               About Us
             </Link>
-            <Link className="hover:text-blue" href="/services" >
+            <Link className="hover:text-blue" href="/services">
               Services
             </Link>
-            <Link className="hover:text-blue" href="/projects" >
+            <Link className="hover:text-blue" href="/projects">
               Projects
             </Link>
           </div>
-          <Link
-            className="hidden lg:block"
-            href="mailto:info@scapesurveys.com"            
-          >
+          <Link className="hidden lg:block" href="mailto:info@scapesurveys.com">
             <Button>info@scapesurveys.com</Button>
           </Link>
           <div
@@ -78,22 +75,22 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className="container flex flex-col items-center gap-4 text-sm font-bold"
+          className="container flex flex-col items-center gap-4 text-sm font-bold py-8"
           style={showMenu ? { display: "flex" } : { display: "none" }}
         >
-          <Link className="hover:text-blue" href="/" >
+          <Link onClick={() => { setShowMenu(false) }} className="hover:text-blue" href="/">
             Home
           </Link>
-          <Link className="hover:text-blue" href="/about" >
+          <Link onClick={() => { setShowMenu(false) }} className="hover:text-blue" href="/about">
             About Us
           </Link>
-          <Link className="hover:text-blue" href="/services" >
+          <Link onClick={() => { setShowMenu(false) }} className="hover:text-blue" href="/services">
             Services
           </Link>
-          <Link className="hover:text-blue" href="/projects" >
+          <Link onClick={() => { setShowMenu(false) }} className="hover:text-blue" href="/projects">
             Projects
           </Link>
-          <Link href="mailto:info@scapesurveys.com" >
+          <Link onClick={() => { setShowMenu(false) }} href="mailto:info@scapesurveys.com">
             <Button>info@scapesurveys.com</Button>
           </Link>
         </div>
