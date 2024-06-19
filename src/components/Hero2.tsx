@@ -23,7 +23,7 @@ const Hero2: FC<Props> = ({ bgImage, title, subtitle }) => {
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-transparent z-10 opacity-50"></div>
       <div className="container px-4 md:px-6 relative z-20">
         <div className="grid gap-4 md:gap-6">
-          <Breadcrumb />
+          {/* <Breadcrumb /> */}
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-white">
             {title}
           </h1>

@@ -5,7 +5,7 @@ const Hero = () => {
     <>
       <div className="relative"
        style={{
-        backgroundImage: 'url(/assets/surveyor-img.jpg)',
+        backgroundImage: 'url(/assets/heroimg.jpeg)',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
