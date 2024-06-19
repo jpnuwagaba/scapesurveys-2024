@@ -63,7 +63,7 @@ const Index = () => {
               subtitle={""}
               bgImage={`${service.imageUrl}`}
             />
-            <section className="container w-full py-8 md:py-12">
+            <section className="container w-full m-0 py-8 md:py-12 text-lg">
               <PortableText value={service.details} />
             </section>
           </>
