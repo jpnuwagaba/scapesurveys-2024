@@ -19,16 +19,16 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-12 md:gap-24">
           <Hero />
           <InfoSection
-            imageSrc="/assets/about.jpeg"
+            imageSrc="/assets/about2.png"
             header="About Us"
-            paragraph="Welcome to Scapes and Surveys Associates, a leading survey firm based in Kampala, Uganda, specializing in Geomatics and Land Management. Since our establishment in 2010, we have been dedicated to providing precise and reliable solutions through the expertise of over twenty-five highly qualified office and field professionals. Our commitment to inclusivity and innovation drives us to create a better future for everyone."
+            paragraph="Welcome to Scapes and Surveys Associates, a leading survey firm based in Kampala, Uganda, specializing in Geomatics and Land Management. Since our establishment in 2010, we have been dedicated to providing precise and reliable solutions through the expertise of highly qualified office and field professionals. Our commitment to inclusivity and innovation drives us to create a better future for everyone."
             buttonText="Read more"
-            buttonLink=""
+            buttonLink="about"
           />
-          <Clients />
           <ServiceSection />
           {/* <CoreValues /> */}
-          <ProjectSection />
+          <ProjectSection />          
+          <Clients />
         </div>
       </main>
     </>

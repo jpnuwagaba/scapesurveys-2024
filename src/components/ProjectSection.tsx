@@ -45,7 +45,7 @@ const ProjectSection = () => {
   return (
     <div>
       <h2 className="container text-4xl font-bold text-blue mb-5 md:mb-8 text-center">
-        Our Projects
+        Recent Projects
       </h2>
       <PriorityProject />
       <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
