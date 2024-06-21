@@ -24,17 +24,17 @@ const AboutUs = () => {
             <div className="mt-8 lg:mt-0 lg:pl-10 flex flex-col gap-4 bg-blue text-white h-full">
               <h2 className="font-bold text-3xl">About Us</h2>
               <p>
-                Scapes and Surveys is a survey firm based in Kampala Uganda with
-                competencies in fields of Geomatics and Land Management.
-                Established in 2010, and is now providing precise and reliable
-                solutions pertaining to the field through hands-on skills of
-                over twenty five qualified office and field men. We are an
-                inclusive working society and interested in making the future
-                better for everyone.
+                Welcome to Scapes and Surveys Associates, a leading survey firm
+                based in Kampala, Uganda, specializing in Geomatics and Land
+                Management. Since our establishment in 2010, we have been
+                dedicated to providing precise and reliable solutions through
+                the expertise of over twenty-five highly qualified office and
+                field professionals. Our commitment to inclusivity and
+                innovation drives us to create a better future for everyone.
               </p>
               <Link className="lg:block" href={"/about"}>
-            <Button variant={'white'}>Read more</Button>
-          </Link>              
+                <Button variant={"white"}>Read more</Button>
+              </Link>
             </div>
           </>
         }

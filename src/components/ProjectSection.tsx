@@ -62,7 +62,7 @@ const ProjectSection = () => {
           </div>
         ))}
       </div>
-      <div className="container flex flex-col lg:items-end">
+      <div className="container flex flex-col lg:items-center">
         <Link href={"/projects"}>
           <Button>View All Projects</Button>
         </Link>

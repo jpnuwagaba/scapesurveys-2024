@@ -1,43 +1,43 @@
-import React from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect } from "react";
+import client from "../../sanity/sanity.client";
+import Client from "./Client";
 
-const logos = [
-  {
-    logo: '/assets/NBRB-logo.png',
-    alt: 'NBRB-logo',
-  },
-  {
-    logo: '/assets/opm.png',
-    alt: 'OPM',
-  },
-  {
-    logo: '/assets/ndiwa.png',
-    alt: 'Ndiwa',
-  },
-  {
-    logo: '/assets/unhcr.png',
-    alt: 'unhcr',
-  },
-  {
-    logo: '/assets/konoike.png',
-    alt: 'konoike',
-  },
-]
+export type clientType = {
+  name: string;
+  logo: any; // Adjust according to your logo type
+};
 
 const Clients = () => {
+  const [clients, setClients] = useState<clientType[]>([]);
+  const query = `*[_type == "client"]{
+    name,
+    logo,
+  }`;
+
+  const fetchClient = async () => {
+    try {
+      const result = await client.fetch(query);
+      setClients(result);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchClient();
+  }, []);
+
   return (
-    <div className='container'>
-        <h3 className="text-lg text-center mb-8 font-bold uppercase text-blue">our valued clients</h3>
-      <div className='flex flex-row flex-wrap items-center justify-center gap-8'>
-        {logos.map((logo) => (
-          <Image
-            style={{objectFit: 'cover'}}
-            key={logo.alt}
-            src={logo.logo}
-            width={100}
-            height={100}
-            alt={logo.alt}
-            className=''
+    <div className="container">
+      <h3 className="text-lg text-center mb-8 font-bold uppercase text-blue">
+        our valued clients
+      </h3>
+      <div className="flex flex-row flex-wrap items-center justify-center gap-8">        
+        {clients.map((client) => (
+          <Client 
+            key={client.name}
+            name={client.name}
+            logo={client.logo}
           />
         ))}
       </div>

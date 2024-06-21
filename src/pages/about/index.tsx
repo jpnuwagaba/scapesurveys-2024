@@ -20,7 +20,8 @@ const index = () => {
         title="About Us"
         subtitle="Discover our commitment to precision and excellence in land surveying."
       />
-      <h2 className="container text-4xl font-bold text-blue my-5 md:my-8 text">
+      <div className="lg:w-[70%] m-auto">
+      <h2 className="container text-4xl font-bold text-blue my-4 md:my-6 text">
         Our Story
       </h2>
       <p className="container text-lg">
@@ -38,6 +39,7 @@ const index = () => {
         one of the leading firms in the disciplines of Land Surveying and
         Geomatics.
       </p>
+      </div>
       <Team />
     </>
   );

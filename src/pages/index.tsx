@@ -6,28 +6,28 @@ import ProjectSection from "@/components/ProjectSection";
 import CoreValues from "@/components/CoreValues";
 import { Metadata, ResolvingMetadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Scapes & Surveys Associates",
-  description: "Scapes & Surveys Associates is a Land Surveying firm based in Uganda",
+  description:
+    "Scapes & Surveys Associates is a Land Surveying firm based in Uganda",
 };
 
 export default function Home() {
   return (
-    <>      
+    <>
       <main className={``}>
         <div className="grid grid-cols-1 gap-12 md:gap-24">
           <Hero />
           <InfoSection
             imageSrc="/assets/about.jpeg"
             header="About Us"
-            paragraph="Scapes and Surveys is a survey firm based in Kampala Uganda with competencies in fields of Geomatics and Land Management. Established in 2010, and is now providing precise and reliable solutions pertaining to the field through hands-on skills of over twenty five qualified office and field men. We are an inclusive working society and interested in making the future better for everyone."
+            paragraph="Welcome to Scapes and Surveys Associates, a leading survey firm based in Kampala, Uganda, specializing in Geomatics and Land Management. Since our establishment in 2010, we have been dedicated to providing precise and reliable solutions through the expertise of over twenty-five highly qualified office and field professionals. Our commitment to inclusivity and innovation drives us to create a better future for everyone."
             buttonText="Read more"
             buttonLink=""
           />
           <Clients />
           <ServiceSection />
-          <CoreValues />
+          {/* <CoreValues /> */}
           <ProjectSection />
         </div>
       </main>
