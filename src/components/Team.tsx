@@ -21,13 +21,14 @@ const Team = () => {
     isAdmin
   }`;
 
-  const query2 = `*[_type == 'teamMember' && position != "!Managing Partner"] {
+  const query2 = `*[_type == 'teamMember' && position != "Managing Partner"] {
     _id,
     name,
     position,
     "image": image.asset->url,
     isAdmin
   }`;
+  
 
   const adminClient = async () => {
     try {
