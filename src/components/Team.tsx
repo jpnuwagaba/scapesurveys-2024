@@ -73,7 +73,7 @@ const Team = () => {
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-12">
           {admin.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg">
+            <div key={index} className="bg-white rounded-lg">
               <img
                 className="h-[280px] w-full rounded-t-lg object-cover"
                 src={member.image}
@@ -88,7 +88,7 @@ const Team = () => {
             </div>
           ))}
           {team.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg">
+            <div key={index} className="bg-white rounded-lg">
               <img
                 className="h-[280px] w-full rounded-t-lg object-cover"
                 src={member.image}
