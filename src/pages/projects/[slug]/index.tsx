@@ -70,7 +70,7 @@ const Index = () => { // Renamed to start with an uppercase letter
               subtitle={""}
               bgImage={`${project.imageUrl}`}
             />
-            <section className="container w-full lg:w-[70%] lg:m-auto py-8 md:py-12 text-lg">
+            <section className="container w-full lg:w-[70%] lg:m-auto py-8 md:py-12 text-lg text-justify">
               <PortableText value={project.details} />
             </section>
           </>

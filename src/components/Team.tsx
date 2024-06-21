@@ -21,7 +21,7 @@ const Team = () => {
     isAdmin
   }`;
 
-  const query2 = `*[_type == 'teamMember' && position == "Surveyor"] {
+  const query2 = `*[_type == 'teamMember' && position != "!Managing Partner"] {
     _id,
     name,
     position,
