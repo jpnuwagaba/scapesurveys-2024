@@ -4,6 +4,7 @@ import client from "../../../../sanity/sanity.client";
 import Hero2 from "@/components/Hero2";
 import Head from "next/head";
 import { PortableText } from "@portabletext/react";
+import PortableTextComponents from "@/components/PortableTextComponents";
 
 export type ServiceType = {
   name: string;
@@ -70,7 +71,7 @@ const Index = () => {
               bgImage={`${service.imageUrl}`}
             />
             <section className="container w-full lg:w-[70%] lg:m-auto m-0 py-8 md:py-12 text-lg text-justify">
-              <PortableText value={service.details} />
+              <PortableText value={service.details} components={PortableTextComponents} />
             </section>
           </>
         ) : (
