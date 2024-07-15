@@ -6,7 +6,7 @@ const ServiceSection = () => {
   return (
     <>
      <div className="">
-      <h2 className="container text-4xl font-bold text-blue mb-5 md:mb-8 text-center">Our Services</h2>
+      <h2 className="container text-3xl md:text-4xl font-bold text-blue mb-5 md:mb-8 text-center">Our Services</h2>
       <Services />
      </div>
     </>

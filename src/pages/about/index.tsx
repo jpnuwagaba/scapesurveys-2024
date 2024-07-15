@@ -21,10 +21,10 @@ const index = () => {
         subtitle="Discover our commitment to precision and excellence in land surveying."
       />
       <div className="lg:w-[70%] m-auto">
-      <h2 className="container text-4xl font-bold text-blue my-4 md:my-6 text">
+      <h2 className="container text-3xl md:text-4xl font-bold text-blue my-4 md:my-6 text-center">
         Our Story
       </h2>
-      <p className="container text-lg">
+      <p className="container text-lg text-justify">
         Scapes and Surveys is a survey firm based in Kampala Uganda with
         competencies in fields of Geomatics and Land Management. Established in
         2010, and is now providing precise and reliable solutions pertaining to

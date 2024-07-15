@@ -44,7 +44,7 @@ const ProjectSection = () => {
 
   return (
     <div>
-      <h2 className="container text-4xl font-bold text-blue mb-5 md:mb-8 text-center">
+      <h2 className="container text-3xl md:text-4xl font-bold text-blue mb-5 md:mb-8 text-center">
         Recent Projects
       </h2>
       <PriorityProject />
@@ -62,7 +62,7 @@ const ProjectSection = () => {
           </div>
         ))}
       </div>
-      <div className="container flex flex-col lg:items-center">
+      <div className="container flex flex-col items-center">
         <Link href={"/projects"}>
           <Button>View All Projects</Button>
         </Link>
