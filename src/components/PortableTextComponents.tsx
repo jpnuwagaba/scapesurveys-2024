@@ -1,6 +1,7 @@
 // portableTextComponents.tsx
 import React from "react";
 import { PortableTextReactComponents } from "@portabletext/react";
+import Link from "next/link";
 
 const PortableTextComponents: Partial<PortableTextReactComponents> = {
   block: {
@@ -43,14 +44,14 @@ const PortableTextComponents: Partial<PortableTextReactComponents> = {
     link: ({ value, children }) => {
       const { href } = value;
       return (
-        <a
+        <Link
           href={href}
-          className="text-blue-500 underline"
+          className="text-blue underline"
           target="_blank"
           rel="noopener noreferrer"
         >
           {children}
-        </a>
+        </Link>
       );
     },
   },

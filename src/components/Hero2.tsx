@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Breadcrumb from "./Breadcrumb";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 interface Props {
   bgImage: string;
@@ -16,6 +16,7 @@ const Hero2: FC<Props> = ({ bgImage, title, subtitle }) => {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-blue">
             {title}
           </h1>
+          <div className="flex flex-col items-center py-4"><Breadcrumbs /></div>
           <p className="text-lg text-muted-foreground md:text-xl">{subtitle}</p>
         </div>
       </div>

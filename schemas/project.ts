@@ -1,3 +1,5 @@
+import { differenceInDays, format } from 'date-fns';
+
 export default {
   name: 'project',
   title: 'Projects',
@@ -10,8 +12,13 @@ export default {
     },
     {
       name: 'image', 
-      title: 'Image',
+      title: 'Featured Image',
       type: 'image'
+    },
+    {
+      name: 'client', 
+      title: 'Client',
+      type: 'string',
     },
     { 
       name: 'category',
@@ -24,7 +31,7 @@ export default {
           {value: "gid surveying and consulting", title: "GIS Surveying & Consulting"},
           {value: "uav lidar scanning and aerial mapping", title: "UAV Lidar Scanning & Aerial Mapping"},
           {value: "utility mapping", title: "Utility Mapping"},
-          {value: "3d laser scanning", title: "3D Laser Scanning "},
+          {value: "3d laser scanning", title: "3D Laser Scanning"},
           {value: "land development", title: "Land Development Services"}
         ]
       }
@@ -39,9 +46,20 @@ export default {
       }
     },
     {
-      name: 'date', 
-      title: 'Date',
+      name: 'startDate', 
+      title: 'Start Date',
       type: 'date'
+    },
+    {
+      name: 'endDate', 
+      title: 'End Date',
+      type: 'date'
+    },
+    {
+      name: 'duration',
+      title: 'Duration',
+      type: 'string',
+      readOnly: true, // Make this field read-only since it's computed
     },
     {
       name: 'location',
@@ -54,5 +72,32 @@ export default {
       type: 'array',
       of: [{ type: 'block' }],
     },
-  ]
-} 
+    {
+      name: 'caseStudy',
+      title: 'Project Case Study',
+      type: 'file',
+      options: {
+        accept: '.pdf'
+      }
+    }
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      startDate: 'startDate',
+      endDate: 'endDate'
+    },
+    prepare({ title, startDate, endDate }: any) {
+      let duration = '';
+      if (startDate && endDate) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        const days = differenceInDays(end, start);
+        duration = `${days} days`;
+      }
+      return {
+        title: `${title} (${duration})`
+      };
+    }
+  }
+};
