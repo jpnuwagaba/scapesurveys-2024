@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import Hero2 from "@/components/Hero2";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { format, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
 
 export type ProjectType = {
   name: string;
@@ -14,12 +15,12 @@ export type ProjectType = {
   details: any;
   imageUrl: any;
   slug: string;
-  client: string; // Added client field
-  duration: string; // Added duration field
+  client: string;
+  duration: string;
   startDate: string;
   endDate: string;
+  status: string; // Added status field
 };
-import { format, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
 
 const Index = () => {
   const router = useRouter();
@@ -35,10 +36,10 @@ const Index = () => {
     "imageUrl": image.asset->url,
     slug,
     client,
+    status,
     startDate,
     endDate
   }`;
-  
 
   const fetchProject = async (slug: string) => {
     try {
@@ -61,43 +62,34 @@ const Index = () => {
     return <div>Loading...</div>;
   }
 
-  const computeDuration = (startDate: string, endDate: string) => {
+  const computeDuration = (startDate: string, endDate: string, status: string) => {
     const start = new Date(startDate);
-    const end = new Date(endDate);
-  
-    // Format the dates
+    const end = status === "ongoing" ? new Date() : new Date(endDate);
+    
     const formattedStartDate = format(start, 'd MMMM yyyy');
-    const formattedEndDate = format(end, 'd MMMM yyyy');
+    const formattedEndDate = status === "ongoing" ? "to Date" : format(end, 'd MMMM yyyy');
   
-    // Compute the total duration in days
     const totalDays = differenceInDays(end, start);
   
-    // Calculate years, months, weeks, and days
     const years = differenceInYears(end, start);
     const months = differenceInMonths(end, start) - years * 12;
     const weeks = Math.floor((totalDays - (years * 365 + months * 30)) / 7);
     const days = totalDays - (years * 365 + months * 30 + weeks * 7);
   
-    // Construct the duration string
     const parts: string[] = [];
     if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`);
     if (months > 0) parts.push(`${months} month${months > 1 ? 's' : ''}`);
     if (weeks > 0) parts.push(`${weeks} week${weeks > 1 ? 's' : ''}`);
     if (days > 0) parts.push(`${days} day${days > 1 ? 's' : ''}`);
   
-    // Combine the parts
-    const duration = parts.join(', ') || '0 days';
+    const duration = parts.slice(0, 2).join(' & ') || '0 days';
   
-    // Return the formatted duration string
-    return `${formattedStartDate} to ${formattedEndDate} (${duration})`;
+    return `${formattedStartDate} ${formattedEndDate} (${duration})`;
   };
 
-
-  // Inside your React component
-  const duration =
-    project?.startDate && project?.endDate
-      ? computeDuration(project.startDate, project.endDate)
-      : "Not specified";
+  const duration = project?.startDate && project?.endDate
+    ? computeDuration(project.startDate, project.endDate, project.status)
+    : "Not specified";
 
   return (
     <>

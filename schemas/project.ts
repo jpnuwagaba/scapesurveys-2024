@@ -46,6 +46,17 @@ export default {
       }
     },
     {
+      name: 'status',
+      title: 'Status',
+      type:'string',
+      options: {
+        list: [
+          {value: "ongoing", title: "Ongoing"},
+          {value: "completed", title: "Completed"}
+        ]
+      }
+    },
+    {
       name: 'startDate', 
       title: 'Start Date',
       type: 'date'

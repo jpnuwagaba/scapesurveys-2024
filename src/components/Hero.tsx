@@ -54,7 +54,7 @@ const Hero = () => {
               left: 0,
               right: 0,
               height: "2px",
-              backgroundColor: "#ede7e6",
+              backgroundColor: "gray",
               zIndex: 3,
             }}
           ></div>
@@ -67,7 +67,7 @@ const Hero = () => {
               right: "30%",
               bottom: 0,
               width: "2px",
-              backgroundColor: "#ede7e6",
+              backgroundColor: "gray",
               zIndex: 3,
             }}
           ></div>

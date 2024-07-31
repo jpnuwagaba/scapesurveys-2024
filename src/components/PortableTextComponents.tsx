@@ -31,7 +31,7 @@ const PortableTextComponents: Partial<PortableTextReactComponents> = {
     ),
     ul: ({ children }) => <ul className="list-disc pl-5">{children}</ul>,
     ol: ({ children }) => <ol className="list-decimal pl-5">{children}</ol>,
-    li: ({ children }) => <li className="mb-1">{children}</li>,
+    li: ({ children }) => <li className="mb-1 ml-5">{children}</li>,
   },
   marks: {
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
