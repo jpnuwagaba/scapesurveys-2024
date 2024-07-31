@@ -29,8 +29,8 @@ const Clients = () => {
 
   return (
     <div className="container">
-      <h3 className="text-lg text-center mb-8 font-bold uppercase text-blue">
-        our valued clients
+      <h3 className="container text-3xl md:text-4xl font-bold text-blue mb-5 md:mb-8 text-center">
+        Trusted by
       </h3>
       <div className="flex flex-row flex-wrap items-center justify-center gap-8">        
         {clients.map((client) => (

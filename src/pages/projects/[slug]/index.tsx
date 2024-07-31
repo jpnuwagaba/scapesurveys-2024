@@ -118,11 +118,11 @@ const Index = () => {
               subtitle={""}
               bgImage={`${project.imageUrl}`}
             />
-            <div className="my-8 md:my-16 container flex flex-col items-start lg:flex-row gap-8 lg:gap-16">
+            <div className="my-8 md:my-16 container flex flex-reverse flex-col items-start lg:flex-row gap-8 lg:gap-16">
               <section className=" text-lg">
                 <PortableText value={project.details} />
               </section>
-              <div className="w-full min-w-[400px] ">
+              <div className="w-full lg:min-w-[400px] ">
                 <Card className="bg-muted p-6 shadow-lg order-1 md:order-2">
                   <div className="grid gap-4">
                     <div>
