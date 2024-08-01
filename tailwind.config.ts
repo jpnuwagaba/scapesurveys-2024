@@ -12,10 +12,6 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: "2rem",
-        md: "2rem",
-      },
       screens: {
         "2xl": "1400px",
       },
