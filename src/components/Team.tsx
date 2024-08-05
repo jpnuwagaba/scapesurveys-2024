@@ -42,7 +42,7 @@ const Team = () => {
 
   useEffect(() => {
     adminClient();
-  }, [adminClient]);
+  }, []);
 
   const teamClient = async () => {
     try {
@@ -56,7 +56,7 @@ const Team = () => {
 
   useEffect(() => {
     teamClient();
-  }, [teamClient]);
+  }, []);
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">

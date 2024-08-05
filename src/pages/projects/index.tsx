@@ -40,7 +40,7 @@ const Index = () => {
 
   useEffect(() => {
     projectsClient();
-  }, [projectsClient]);
+  }, []);
 
   return (
     <>

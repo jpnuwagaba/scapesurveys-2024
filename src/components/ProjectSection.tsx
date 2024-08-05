@@ -40,7 +40,7 @@ const ProjectSection = () => {
 
   useEffect(() => {
     projectsClient();
-  }, [projectsClient]);
+  }, []);
 
   return (
     <div>

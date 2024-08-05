@@ -34,7 +34,7 @@ const Services = () => {
 
   useEffect(() => {
     servicesClient();
-  }, [servicesClient]);
+  }, []);
 
   return (
     <>

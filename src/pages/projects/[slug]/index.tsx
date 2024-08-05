@@ -6,7 +6,12 @@ import { PortableText } from "@portabletext/react";
 import Hero2 from "@/components/Hero2";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { format, differenceInDays, differenceInMonths, differenceInYears } from 'date-fns';
+import {
+  format,
+  differenceInDays,
+  differenceInMonths,
+  differenceInYears,
+} from "date-fns";
 
 export type ProjectType = {
   name: string;
@@ -62,34 +67,40 @@ const Index = () => {
     return <div>Loading...</div>;
   }
 
-  const computeDuration = (startDate: string, endDate: string, status: string) => {
+  const computeDuration = (
+    startDate: string,
+    endDate: string,
+    status: string
+  ) => {
     const start = new Date(startDate);
     const end = status === "ongoing" ? new Date() : new Date(endDate);
-    
-    const formattedStartDate = format(start, 'd MMMM yyyy');
-    const formattedEndDate = status === "ongoing" ? "to Date" : format(end, 'd MMMM yyyy');
-  
+
+    const formattedStartDate = format(start, "d MMMM yyyy");
+    const formattedEndDate =
+      status === "ongoing" ? "to Date" : format(end, "d MMMM yyyy");
+
     const totalDays = differenceInDays(end, start);
-  
+
     const years = differenceInYears(end, start);
     const months = differenceInMonths(end, start) - years * 12;
     const weeks = Math.floor((totalDays - (years * 365 + months * 30)) / 7);
     const days = totalDays - (years * 365 + months * 30 + weeks * 7);
-  
+
     const parts: string[] = [];
-    if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`);
-    if (months > 0) parts.push(`${months} month${months > 1 ? 's' : ''}`);
-    if (weeks > 0) parts.push(`${weeks} week${weeks > 1 ? 's' : ''}`);
-    if (days > 0) parts.push(`${days} day${days > 1 ? 's' : ''}`);
-  
-    const duration = parts.slice(0, 2).join(' & ') || '0 days';
-  
+    if (years > 0) parts.push(`${years} year${years > 1 ? "s" : ""}`);
+    if (months > 0) parts.push(`${months} month${months > 1 ? "s" : ""}`);
+    if (weeks > 0) parts.push(`${weeks} week${weeks > 1 ? "s" : ""}`);
+    if (days > 0) parts.push(`${days} day${days > 1 ? "s" : ""}`);
+
+    const duration = parts.slice(0, 2).join(" & ") || "0 days";
+
     return `${formattedStartDate} ${formattedEndDate} (${duration})`;
   };
 
-  const duration = project?.startDate && project?.endDate
-    ? computeDuration(project.startDate, project.endDate, project.status)
-    : "Not specified";
+  const duration =
+    project?.startDate && project?.endDate
+      ? computeDuration(project.startDate, project.endDate, project.status)
+      : "Not specified";
 
   return (
     <>
@@ -110,11 +121,35 @@ const Index = () => {
               subtitle={""}
               bgImage={`${project.imageUrl}`}
             />
+            <div className="w-full lg:min-w-[400px] container lg:hidden py-5 lg:py-8">
+              <Card className="bg-muted p-6 shadow-lg order-1 md:order-2">
+                <div className="grid gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold">Client</h3>
+                    <p>{project.client || "Not specified"}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">Location</h3>
+                    <p>{project.location || "Not specified"}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">Duration</h3>
+                    <p>{duration}</p>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <Button>
+                    Download Case Study
+                    <DownloadIcon className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </Card>
+            </div>
             <div className="my-8 md:my-16 container flex flex-reverse flex-col items-start lg:flex-row gap-8 lg:gap-16">
-              <section className=" text-lg">
+              <section className="text-justify lg:text-left text-lg">
                 <PortableText value={project.details} />
               </section>
-              <div className="w-full lg:min-w-[400px] ">
+              <div className="hidden lg:block w-full lg:min-w-[400px] ">
                 <Card className="bg-muted p-6 shadow-lg order-1 md:order-2">
                   <div className="grid gap-4">
                     <div>
