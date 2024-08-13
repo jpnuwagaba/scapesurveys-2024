@@ -44,7 +44,7 @@ const ProjectSection = () => {
 
   return (
     <div>
-      <h2 className="container text-3xl md:text-4xl font-bold text-blue mb-5 md:mb-8 text-center">
+      <h2 className="container text-3xl md:text-4xl font-bold text-blue pb-5 md:pb-8 text-center">
         Recent Projects
       </h2>
       <PriorityProject />

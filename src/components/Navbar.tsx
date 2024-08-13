@@ -42,7 +42,7 @@ const Navbar = () => {
               src="/assets/logo.png"
               width={100}
               height={100}
-              className="w-16 md:w-24"
+              className="w-[90px] md:w-24"
               alt="logo"
             />
           </Link>
@@ -68,9 +68,9 @@ const Navbar = () => {
             className="lg:hidden cursor-pointer"
           >
             {showMenu ? (
-              <X color="#2b388f" />
+              <X color="#2b388f" size={'2.5rem'}/>
             ) : (
-              <AlignJustify color="#2b388f" />
+              <AlignJustify color="#2b388f" size={'2.5rem'}/>
             )}
           </div>
         </div>
