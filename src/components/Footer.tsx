@@ -52,7 +52,7 @@ const Footer = () => {
               src="/assets/logo.png"
               width={100}
               height={100}
-              className="w-24"
+              className="w-[90px] md:w-24"
               alt="logo"
             />
             <p className="mt-4 text-gray-700">
@@ -69,11 +69,11 @@ const Footer = () => {
               </div>
             </div>
             <div className="mt-4 flex gap-4">
-              <Link href={"/"}>
-                <FaInstagram  color="#405DE6" size={'1.5rem'}/>
+              <Link href={"https://www.instagram.com/scapesurveys/"}>
+                <FaInstagram  color="#DD2A7B" size={'1.5rem'}/>
               </Link>
               <Link href={"/"}>
-                <FaXTwitter color="#1DA1F2" size={'1.5rem'}/>
+                <FaXTwitter color="#000000" size={'1.5rem'}/>
               </Link>
               <Link href={"/"}>
                 <FaLinkedinIn color="#0077B5" size={'1.5rem'}/>
