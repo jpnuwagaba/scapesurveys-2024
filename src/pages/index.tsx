@@ -4,17 +4,47 @@ import Clients from "@/components/Clients";
 import ServiceSection from "@/components/ServiceSection";
 import ProjectSection from "@/components/ProjectSection";
 import CoreValues from "@/components/CoreValues";
-import { Metadata, ResolvingMetadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Scapes & Surveys Associates",
-  description:
-    "Scapes & Surveys Associates is a Land Surveying firm based in Uganda",
-};
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Scapes & Surveys Associates</title>
+        <meta
+          name="description"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+        />
+
+        {/* icon */}
+        <link rel="icon" href="/assets/icon.svg" />
+
+        {/* keywords */}
+        <meta name="keywords" content="land, surveying, geomatics, Uganda, scapes, surveys, lidar, surveys" />
+
+        {/* Open Graph Metadata */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Scapes & Surveys Associates" />
+        <meta
+          property="og:description"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+        />
+        <meta property="og:url" content="https://scapesurveys.com" />
+        <meta property="og:image" content="/assets/logo.png" />
+
+        {/* Twitter Card Metadata */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Scapes & Surveys Associates" />
+        <meta
+          name="twitter:description"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+        />
+        <meta name="twitter:image" content="/assets/logo.png" />
+        <meta name="twitter:site" content="@scapesurveys.com" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="http://scapesurveys.com" />
+      </Head>
       <main className={``}>
         <div className="grid grid-cols-1 gap-12 md:gap-24">
           <Hero />
@@ -27,7 +57,7 @@ export default function Home() {
           />
           <ServiceSection />
           {/* <CoreValues /> */}
-          <ProjectSection />          
+          <ProjectSection />
           <Clients />
         </div>
       </main>

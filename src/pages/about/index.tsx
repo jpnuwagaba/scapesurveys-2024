@@ -8,12 +8,44 @@ const index = () => {
     <>
       <Head>
         <title>About Us | Scapes & Surveys Associates</title>
-        <link rel="icon" href="/assets/logo.png" />
+        <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
-          content="Scapes & Surveys Associates is a Land Surveying firm based in Uganda"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
         />
-        <meta name="keywords" content="Scapes, Surveys, Associates" />
+        <meta
+          name="keywords"
+          content="Scapes, Surveys, Associates, about, story, history, surveying, company"
+        />
+
+        {/* open graph metadata */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="About Us | Scapes & Surveys Associates"
+        />
+        <meta
+          property="og:description"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+        />
+        {/* <meta property="og:url" content="https://scapesurveys.com/about" /> */}
+        <meta property="og:image" content="/assets/logo.png" />
+
+        {/* Twitter Card Metadata */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Us | Scapes & Surveys Associates"
+        />
+        <meta
+          name="twitter:description"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+        />
+        <meta name="twitter:image" content="/assets/logo.png" />
+        {/* <meta name="twitter:site" content="@scapesurveys.com" /> */}
+
+        {/* Canonical URL */}
+        {/* <link rel="canonical" href="http://scapesurveys.com" /> */}
       </Head>
       <Hero2
         bgImage="assets/energy.jpg"
@@ -21,24 +53,19 @@ const index = () => {
         subtitle="Discover our commitment to precision and excellence in land surveying."
       />
       <div className="lg:w-[70%] m-auto">
-      <h2 className="container text-3xl md:text-4xl font-bold text-blue my-4 md:my-6 text-center">
-        Our Story
-      </h2>
-      <p className="container text-lg text-justify">
-        Scapes and Surveys is a survey firm based in Kampala Uganda with
-        competencies in fields of Geomatics and Land Management. Established in
-        2010, and is now providing precise and reliable solutions pertaining to
-        the field through hands-on skills of over twenty five qualified office
-        and field men. We are an inclusive working society and interested in
-        making the future better for everyone. In 2010, Arthur Akanga and Diana
-        Abeho started Scapes and Surveys Associates with the vision of reaching
-        needs of millions of people in Uganda and around the world. They have
-        since then ensured that Scapes and Surveys Associates evolves around
-        strong humanitarian and socially inclusive working principles, making it
-        a company where anyone can work. Today, Scapes and Surveys Associates is
-        one of the leading firms in the disciplines of Land Surveying and
-        Geomatics.
-      </p>
+        <h2 className="container text-3xl md:text-4xl font-bold text-blue my-4 md:my-6 text-center">
+          Our Story
+        </h2>
+        <p className="container text-lg text-justify">
+          Scapes and Surveys is a Kampala-based survey firm specializing in
+          Geomatics and Land Management. Founded in 2010 by Arthur Akanga and
+          Diana Abeho, the company aims to meet the needs of millions in Uganda
+          and beyond. With a skilled team of over 25 professionals, Scapes and
+          Surveys provides precise and reliable solutions while fostering an
+          inclusive work environment. The firm is committed to strong
+          humanitarian values and has become a leader in Land Surveying and
+          Geomatics.
+        </p>
       </div>
       <Team />
     </>

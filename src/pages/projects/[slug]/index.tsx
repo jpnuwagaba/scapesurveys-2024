@@ -106,10 +106,10 @@ const Index = () => {
     <>
       <Head>
         <title>{project?.name || "Project"}</title>
-        <link rel="icon" href="/assets/logo.png" />
+        <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
-          content="Scapes & Surveys Associates is a Land Surveying firm based in Uganda"
+          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
         />
         <meta name="keywords" content="Scapes, Surveys, Associates" />
       </Head>
@@ -127,6 +127,10 @@ const Index = () => {
                   <div>
                     <h3 className="text-lg font-semibold">Client</h3>
                     <p>{project.client || "Not specified"}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">Services</h3>
+                    <p className="uppercase text-xs bg-nicegreen p-1 rounded inline text-white">{project.category || "Not specified"}</p>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Location</h3>
@@ -155,6 +159,10 @@ const Index = () => {
                     <div>
                       <h3 className="text-lg font-semibold">Client</h3>
                       <p>{project.client || "Not specified"}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">Services</h3>
+                      <p className="uppercase text-xs bg-nicegreen p-1 rounded inline text-white">{project.category || "Not specified"}</p>
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Location</h3>

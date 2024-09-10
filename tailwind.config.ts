@@ -21,6 +21,7 @@ const config = {
         blue: "#2b388f",
         brown: "#603813",
         green: "#37b34a",
+        nicegreen: "#ABC331",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

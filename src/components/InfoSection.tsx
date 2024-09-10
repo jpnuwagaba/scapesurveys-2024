@@ -27,7 +27,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
           <h2 className="text-2xl md:text-3xl text-white font-bold mb-4">{header}</h2>
           <p className="mb-4 text-justify text-white text-lg">{paragraph}</p>          
           <Link href={`/${buttonLink}`}>
-            <Button variant={"white"}>{buttonText}</Button>
+            <Button variant={"nicegreen"}>{buttonText}</Button>
           </Link>
         </div>
       </div>

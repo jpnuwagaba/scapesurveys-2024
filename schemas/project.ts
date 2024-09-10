@@ -23,7 +23,8 @@ export default {
     { 
       name: 'category',
       title: 'Category',
-      type: 'string',
+      type: 'array', // Change to array type
+      of: [{ type: 'string' }], // Specify that it contains strings
       options: {
         list: [
           {value: "cadastral surveying", title: "Cadastral Surveying"},
