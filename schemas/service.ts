@@ -33,7 +33,15 @@ export default {
       name: "details",
       title: "Details",
       type: "array",
-      of: [ { type: "block", }, ],
+      of: [
+        { type: "block",
+          lists: [
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Number', value: 'number'},
+            {title: 'Check', value: 'check'}
+          ],
+        }, 
+      ],
     },
     orderRankField({ type: 'service' }) // Add orderRankField
   ],
