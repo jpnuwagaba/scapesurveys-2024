@@ -16,7 +16,7 @@ import Head from "next/head";
 const Index = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
-  const query = `*[_type == 'project']{
+  const query = `*[_type == 'project']|order(orderRank){
     _id,
     name,
     category,
@@ -45,7 +45,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Projects | Scapes & Surveys Associates</title>
+        <title>Projects</title>
         <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
@@ -54,14 +54,14 @@ const Index = () => {
         <meta name="keywords" content="Scapes, Surveys, Associates" />
 
         {/* open graph metadata */}
-        <meta property="og:title" content="Projects | Scapes & Surveys Associates" />
+        <meta property="og:title" content="Projects" />
         <meta property="og:description" content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda." />
         <meta property="og:url" content="https://scapesurveys.com/projects" />
         <meta property="og:image" content="/assets/logo.png" />
 
         {/* Twitter Card Metadata */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Projects | Scapes & Surveys Associates" />
+        <meta name="twitter:title" content="Projects" />
         <meta
           name="twitter:description"
           content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."

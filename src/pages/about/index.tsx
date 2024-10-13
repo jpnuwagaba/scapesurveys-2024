@@ -7,7 +7,7 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>About Us | Scapes & Surveys Associates</title>
+        <title>About Us</title>
         <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
@@ -22,7 +22,7 @@ const index = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="About Us | Scapes & Surveys Associates"
+          content="About Us"
         />
         <meta
           property="og:description"
@@ -35,7 +35,7 @@ const index = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="About Us | Scapes & Surveys Associates"
+          content="About Us"
         />
         <meta
           name="twitter:description"

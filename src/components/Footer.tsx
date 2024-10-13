@@ -5,6 +5,7 @@ import Link from "next/link";
 import client from "../../sanity/sanity.client";
 import { FaXTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import Contactsection from "./Contactsection";
+import ImageGallery from "./Gallery";
 
 export type ServiceType = {
   name: string;
@@ -45,6 +46,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 mt-16">
       {/* <Contactsection /> */}
+      {/* <ImageGallery /> */}
       <div className="container mx-auto py-16">
         <div className="flex flex-wrap gap-16 justify-between">
           <div className="flex-1">

@@ -11,7 +11,7 @@ import client from "../../sanity/sanity.client";
 
 const Services = () => {
   const [services, setServices] = useState<ServiceType[]>([]);
-  const query = `*[_type == "service"]{
+  const query = `*[_type == "service"]|order(orderRank){
     _id,
     name,
     details,

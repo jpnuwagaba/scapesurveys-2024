@@ -1,4 +1,5 @@
 import { differenceInDays, format } from 'date-fns';
+import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list';
 
 export default {
   name: 'project',
@@ -91,8 +92,10 @@ export default {
       options: {
         accept: '.pdf'
       }
-    }
+    },
+    orderRankField({ type: 'project' }) // Add orderRankField
   ],
+  orderings: [orderRankOrdering], // Add orderRankOrdering
   preview: {
     select: {
       title: 'name',

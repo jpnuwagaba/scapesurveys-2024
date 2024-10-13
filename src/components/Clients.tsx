@@ -9,7 +9,7 @@ export type clientType = {
 
 const Clients = () => {
   const [clients, setClients] = useState<clientType[]>([]);
-  const query = `*[_type == "client"]{
+  const query = `*[_type == "client"]|order(orderRank){
     name,
     logo,
   }`;

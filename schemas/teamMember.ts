@@ -1,3 +1,5 @@
+import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list';
+
 export default {
   name: 'teamMember',
   title: 'Team Members',
@@ -31,5 +33,7 @@ export default {
       description: 'Check if this team member is an admin.',
       validation: (Rule: { required: () => any; }) => Rule.required(),
     },
+    orderRankField({ type: 'teamMember' }) // Add orderRankField
   ],
+  orderings: [orderRankOrdering], // Add orderRankOrdering
 }

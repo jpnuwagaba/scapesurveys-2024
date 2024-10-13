@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import client from "../../../../sanity/sanity.client";
 import Head from "next/head";
+import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Hero2 from "@/components/Hero2";
 import { Card } from "@/components/ui/card";
@@ -25,6 +26,7 @@ export type ProjectType = {
   startDate: string;
   endDate: string;
   status: string; // Added status field
+  caseStudy: any; // Added caseStudy field
 };
 
 const Index = () => {
@@ -43,7 +45,8 @@ const Index = () => {
     client,
     status,
     startDate,
-    endDate
+    endDate,
+    caseStudy
   }`;
 
   const fetchProject = async (slug: string) => {
@@ -94,7 +97,7 @@ const Index = () => {
 
     const duration = parts.slice(0, 2).join(" & ") || "0 days";
 
-    return `${formattedStartDate} ${formattedEndDate} (${duration})`;
+    return `${formattedStartDate} to ${formattedEndDate} (${duration})`;
   };
 
   const duration =
@@ -142,10 +145,12 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <Button>
-                    Download Case Study
-                    <DownloadIcon className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href={`/${project.caseStudy}`}>
+                    <Button>
+                      Download Case Study
+                      <DownloadIcon className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             </div>
@@ -174,10 +179,12 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="mt-6">
+                  <Link href={`/${project.caseStudy}`}>
                     <Button>
                       Download Case Study
                       <DownloadIcon className="ml-2 h-4 w-4" />
                     </Button>
+                  </Link>
                   </div>
                 </Card>
               </div>

@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <>
       <Head>
-        <title>Services | Scapes & Surveys Associates</title>
+        <title>Services</title>
         <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
@@ -17,7 +17,7 @@ const Index = () => {
 
         {/* open graph metadata */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Services | Scapes & Surveys Associates" />
+        <meta property="og:title" content="Services" />
         <meta
           property="og:description"
           content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
@@ -27,7 +27,7 @@ const Index = () => {
 
         {/* Twitter Card Metadata */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Services | Scapes & Surveys Associates" />
+        <meta name="twitter:title" content="Services" />
         <meta
           name="twitter:description"
           content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."

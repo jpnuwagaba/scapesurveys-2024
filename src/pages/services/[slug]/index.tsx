@@ -4,7 +4,7 @@ import client from "../../../../sanity/sanity.client";
 import Hero2 from "@/components/Hero2";
 import Head from "next/head";
 import { PortableText } from "@portabletext/react";
-import PortableTextComponents from "@/components/PortableTextComponents";
+import PortableTextComponents from "@/components/PortableTextComponents"; 
 
 export type ServiceType = {
   name: string;

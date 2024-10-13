@@ -1,3 +1,5 @@
+import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list';
+
 export default {
   name: "service",
   title: "Services",
@@ -33,5 +35,7 @@ export default {
       type: "array",
       of: [ { type: "block", }, ],
     },
+    orderRankField({ type: 'service' }) // Add orderRankField
   ],
+  orderings: [orderRankOrdering], // Add orderRankOrdering
 };

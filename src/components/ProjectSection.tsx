@@ -16,7 +16,7 @@ import Link from "next/link";
 const ProjectSection = () => {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
-  const query = `*[_type == 'project']{
+  const query = `*[_type == 'project']|order(orderRank){
     _id,
     name,
     category,
@@ -47,7 +47,7 @@ const ProjectSection = () => {
       <h2 className="container text-3xl md:text-4xl font-bold text-blue pb-5 md:pb-8 text-center">
         Recent Projects
       </h2>
-      <PriorityProject />
+      {/* <PriorityProject /> */}
       <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
         {projects.map((project, index) => (
           <div key={index}>
