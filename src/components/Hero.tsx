@@ -17,7 +17,7 @@ const Hero = () => {
           Your Partners in Land Surveying and <span className="text-green">Geo-solutions</span>
         </h1>
         <p className="mx-auto max-w-3xl text-center text-xl sm:text-2xl">
-          Leaders in Surveying, Aerial Mapping, 3D Scanning and many complex surveys.
+          Leaders in Surveying, Aerial Mapping, 3D Scanning and advanced survey solutions.
         </p>
       </div>
     </div>
