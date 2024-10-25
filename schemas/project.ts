@@ -28,13 +28,13 @@ export default {
       of: [{ type: 'string' }], // Specify that it contains strings
       options: {
         list: [
-          {value: "cadastral surveying", title: "Cadastral Surveying"},
-          {value: "engineering surveying", title: "Engineering Surveying"},
+          {value: "cadastral surveys", title: "Cadastral Surveys"},
+          {value: "engineering surveys", title: "Engineering Surveys"},
           {value: "gid surveying and consulting", title: "GIS Surveying & Consulting"},
           {value: "uav lidar scanning and aerial mapping", title: "UAV Lidar Scanning & Aerial Mapping"},
           {value: "utility mapping", title: "Utility Mapping"},
           {value: "3d laser scanning", title: "3D Laser Scanning"},
-          {value: "land development", title: "Land Development Services"}
+          {value: "land development services", title: "Land Development Services"}
         ]
       }
     },

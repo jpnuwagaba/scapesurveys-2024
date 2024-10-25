@@ -27,7 +27,7 @@ export type ProjectType = {
   startDate: string;
   endDate: string;
   status: string; // Added status field
-  caseStudy: any; // Added caseStudy field
+  caseStudyUrl: string;
   gallery: any[]; // Added gallery field
   mapLink: string; // Added mapLink field
 };
@@ -49,7 +49,7 @@ const Index = () => {
     status,
     startDate,
     endDate,
-    caseStudy,
+    "caseStudyUrl": caseStudy.asset->url,
     gallery,
     mapLink
   }`;
@@ -191,12 +191,12 @@ const Index = () => {
                 <h2 className="text-2xl font-semibold mb-4 text-blue">Project Description</h2>
                 <PortableText value={project.details} />
                 <div className="mt-6">
-                  <Link href={`/${project.caseStudy}`}>
-                    <Button>
-                      Download Case Study
-                      <DownloadIcon className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
+                <Link target="_blank" href={project.caseStudyUrl} passHref>
+                  <Button>
+                    Download Case Study
+                    <DownloadIcon className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
                 </div>
               </div>
 
