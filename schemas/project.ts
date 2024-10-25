@@ -93,6 +93,20 @@ export default {
         accept: '.pdf'
       }
     },
+    {
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'array',
+      of: [{ type: 'image' }],
+      options: {
+        layout: 'grid'
+      }
+    },
+    {
+      name: 'mapLink',
+      title: 'Google Maps Pin Link',
+      type: 'url'
+    },
     orderRankField({ type: 'project' }) // Add orderRankField
   ],
   orderings: [orderRankOrdering], // Add orderRankOrdering

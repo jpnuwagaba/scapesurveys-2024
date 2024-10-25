@@ -9,6 +9,7 @@ const Hero = () => {
         alt="Construction site with cranes"
         layout="fill"
         objectFit="cover"
+        objectPosition="right center"
         className="brightness-50"
       />
       <div className="absolute inset-0 bg-black bg-opacity-40" />
