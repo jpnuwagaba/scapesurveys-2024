@@ -164,7 +164,7 @@ const Index = () => {
                     <Ruler className="h-5 min-w-5 mr-2 text-blue" />
                     <div>
                       <p className="text-sm font-bold text-gray-700">Services</p>
-                      <p className="text-sm uppercase">{project.category.join(", ") || "Not specified"}</p>
+                      <p className="text-sm uppercase">{project.category || "Not specified"}</p>
                     </div>
                   </CardContent>
                 </Card>
