@@ -130,14 +130,17 @@ const Index = () => {
               bgImage={`${project.imageUrl}`}
             />
             <div className="container py-8">
-
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
                 <Card>
                   <CardContent className="flex items-start p-4">
                     <MapPin className="h-5 min-w-5 mr-2 text-blue" />
                     <div>
-                      <p className="text-sm font-bold text-gray-700">Location</p>
-                      <p className="text-sm ">{project.location || "Not specified"}</p>
+                      <p className="text-sm font-bold text-gray-700">
+                        Location
+                      </p>
+                      <p className="text-sm ">
+                        {project.location || "Not specified"}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -145,7 +148,9 @@ const Index = () => {
                   <CardContent className="flex items-start p-4">
                     <Calendar className="h-5 min-w-5 mr-2 text-blue" />
                     <div>
-                      <p className="text-sm font-bold text-gray-700">Project Date</p>
+                      <p className="text-sm font-bold text-gray-700">
+                        Project Date
+                      </p>
                       <p className="text-sm ">{duration}</p>
                     </div>
                   </CardContent>
@@ -155,7 +160,9 @@ const Index = () => {
                     <Users className="h-5 min-w-5 mr-2 text-blue" />
                     <div>
                       <p className="text-sm font-bold text-gray-700">Client</p>
-                      <p className="text-sm ">{project.client || "Not specified"}</p>
+                      <p className="text-sm ">
+                        {project.client || "Not specified"}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -163,8 +170,12 @@ const Index = () => {
                   <CardContent className="flex items-start p-4">
                     <Ruler className="h-5 min-w-5 mr-2 text-blue" />
                     <div>
-                      <p className="text-sm font-bold text-gray-700">Services</p>
-                      <p className="text-sm uppercase">{project.category || "Not specified"}</p>
+                      <p className="text-sm font-bold text-gray-700">
+                        Services
+                      </p>
+                      <p className="text-sm uppercase">
+                        {project.category || "Not specified"}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
@@ -172,7 +183,9 @@ const Index = () => {
 
               {project.mapLink && (
                 <div className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4 text-blue">Project Map</h2>
+                  <h2 className="text-2xl font-semibold mb-4 text-blue">
+                    Project Map
+                  </h2>
                   <div className="bg-muted h-[400px] rounded-lg flex items-center justify-center">
                     <iframe
                       src={project.mapLink}
@@ -186,23 +199,29 @@ const Index = () => {
                   </div>
                 </div>
               )}
-              
+
               <div className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4 text-blue">Project Description</h2>
+                <h2 className="text-2xl font-semibold mb-4 text-blue">
+                  Project Description
+                </h2>
                 <PortableText value={project.details} />
-                <div className="mt-6">
-                <Link target="_blank" href={project.caseStudyUrl} passHref>
-                  <Button>
-                    Download Case Study
-                    <DownloadIcon className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                </div>
+                {project.caseStudyUrl && (
+                  <div className="mt-6">
+                    <Link target="_blank" href={project.caseStudyUrl} passHref>
+                      <Button>
+                        Download Case Study
+                        <DownloadIcon className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {project.gallery && project.gallery.length > 0 && (
                 <div className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Project Gallery</h2>
+                  <h2 className="text-2xl font-semibold mb-4">
+                    Project Gallery
+                  </h2>
                   <div className="grid gap-4 md:grid-cols-3">
                     {project.gallery.map((image, i) => (
                       <img
@@ -215,7 +234,7 @@ const Index = () => {
                   </div>
                 </div>
               )}
-            </div>            
+            </div>
           </>
         ) : (
           <div>No project found</div>

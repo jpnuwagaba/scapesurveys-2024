@@ -1,4 +1,3 @@
-import { differenceInDays, format } from 'date-fns';
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list';
 
 export default {
@@ -116,16 +115,9 @@ export default {
       startDate: 'startDate',
       endDate: 'endDate'
     },
-    prepare({ title, startDate, endDate }: any) {
-      let duration = '';
-      if (startDate && endDate) {
-        const start = new Date(startDate);
-        const end = new Date(endDate);
-        const days = differenceInDays(end, start);
-        duration = `${days} days`;
-      }
+    prepare({ title }: any) {
       return {
-        title: `${title} (${duration})`
+        title: `${title}`
       };
     }
   }
