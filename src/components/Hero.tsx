@@ -10,7 +10,7 @@ const Hero = () => {
         layout="fill"
         objectFit="cover"
         objectPosition="right center"
-        className="brightness-50"
+        className="brightness-80"
       />
       <div className="absolute inset-0 bg-black bg-opacity-40" />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">

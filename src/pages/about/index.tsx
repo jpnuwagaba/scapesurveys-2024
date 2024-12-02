@@ -11,7 +11,7 @@ const index = () => {
         <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
-          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+          content="Discover our commitment to precision and excellence in land surveying."
         />
         <meta
           name="keywords"
@@ -26,7 +26,7 @@ const index = () => {
         />
         <meta
           property="og:description"
-          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+          content="Discover our commitment to precision and excellence in land surveying."
         />
         {/* <meta property="og:url" content="https://scapesurveys.com/about" /> */}
         <meta property="og:image" content="/assets/logo.png" />
@@ -39,7 +39,7 @@ const index = () => {
         />
         <meta
           name="twitter:description"
-          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+          content="Discover our commitment to precision and excellence in land surveying."
         />
         <meta name="twitter:image" content="/assets/logo.png" />
         {/* <meta name="twitter:site" content="@scapesurveys.com" /> */}

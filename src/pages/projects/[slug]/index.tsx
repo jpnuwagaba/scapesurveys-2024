@@ -50,7 +50,7 @@ const Index = () => {
     startDate,
     endDate,
     "caseStudyUrl": caseStudy.asset->url,
-    gallery,
+    "gallery": gallery[].asset->url, // Updated to fetch image URLs
     mapLink
   }`;
 
@@ -219,16 +219,16 @@ const Index = () => {
 
               {project.gallery && project.gallery.length > 0 && (
                 <div className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">
+                  <h2 className="text-2xl font-semibold mb-4 text-blue">
                     Project Gallery
                   </h2>
                   <div className="grid gap-4 md:grid-cols-3">
-                    {project.gallery.map((image, i) => (
+                    {project.gallery.map((imageUrl, i) => (
                       <img
                         key={i}
-                        src={`/${image.asset.url}`}
+                        src={imageUrl} // Use imageUrl directly
                         alt={`Gallery image ${i + 1}`}
-                        className="w-full h-[200px] object-cover rounded-lg"
+                        className="w-full h-[400px] object-cover rounded-lg"
                       />
                     ))}
                   </div>

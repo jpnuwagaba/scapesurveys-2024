@@ -49,13 +49,13 @@ const Index = () => {
         <link rel="icon" href="/assets/icon.svg" />
         <meta
           name="description"
-          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+          content="Showcasing our expertise through successful and diverse land surveying projects."
         />
         <meta name="keywords" content="Scapes, Surveys, Associates" />
 
         {/* open graph metadata */}
         <meta property="og:title" content="Projects" />
-        <meta property="og:description" content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda." />
+        <meta property="og:description" content="Showcasing our expertise through successful and diverse land surveying projects." />
         <meta property="og:url" content="https://scapesurveys.com/projects" />
         <meta property="og:image" content="/assets/logo.png" />
 
@@ -64,7 +64,7 @@ const Index = () => {
         <meta name="twitter:title" content="Projects" />
         <meta
           name="twitter:description"
-          content="Scapes & Surveys Associates offers expert land surveying and geomatics services in Uganda."
+          content="Showcasing our expertise through successful and diverse land surveying projects."
         />
         <meta name="twitter:image" content="/assets/logo.png" />
         {/* <meta name="twitter:site" content="@scapesurveys.com/projects" /> */}
