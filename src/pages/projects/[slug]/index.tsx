@@ -222,13 +222,13 @@ const Index = () => {
                   <h2 className="text-2xl font-semibold mb-4 text-blue">
                     Project Gallery
                   </h2>
-                  <div className="grid gap-4 md:grid-cols-3">
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {project.gallery.map((imageUrl, i) => (
                       <img
                         key={i}
                         src={imageUrl} // Use imageUrl directly
                         alt={`Gallery image ${i + 1}`}
-                        className="w-full h-[400px] object-cover rounded-lg"
+                        className="w-full h-[300px] object-cover rounded-lg"
                       />
                     ))}
                   </div>

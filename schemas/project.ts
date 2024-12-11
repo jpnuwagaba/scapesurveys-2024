@@ -23,19 +23,27 @@ export default {
     { 
       name: 'category',
       title: 'Category',
-      type: 'array', // Change to array type
-      of: [{ type: 'string' }], // Specify that it contains strings
+      type: 'string',
       options: {
         list: [
-          {value: "cadastral surveys", title: "Cadastral Surveys"},
           {value: "engineering surveys", title: "Engineering Surveys"},
-          {value: "gid surveying and consulting", title: "GIS Surveying & Consulting"},
-          {value: "uav lidar scanning and aerial mapping", title: "UAV Lidar Scanning & Aerial Mapping"},
-          {value: "utility mapping", title: "Utility Mapping"},
           {value: "3d laser scanning", title: "3D Laser Scanning"},
-          {value: "land development services", title: "Land Development Services"}
+          {value: "uav lidar scanning and aerial mapping", title: "UAV Lidar Scanning & Aerial Mapping"},
+          {value: "monitoring surveys", title: "Monitoring Surveys"},
+          {value: "mining surveys", title: "Mining Surveys"},
+          {value: "land development services", title: "Land Development Services"},
+          {value: "cadastral surveys", title: "Cadastral Surveys"},
+          {value: "gis and remote sensing", title: "GIS & Remote Sensing"},
+          {value: "utility mapping", title: "Utility Mapping"},
+          {value: "other", title: "Other"}
         ]
       }
+    },
+    {
+      name: 'otherCategory',
+      title: 'Other Category',
+      type: 'string',
+      hidden: ({ parent }: { parent: { category?: string } }) => parent?.category !== 'other'
     },
     {
       name: 'slug',

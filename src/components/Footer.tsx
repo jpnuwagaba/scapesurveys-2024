@@ -18,9 +18,9 @@ export type ServiceType = {
 
 const Footer = () => {
   const [services, setServices] = useState<ServiceType[]>([]);
-  const query = `*[_type == "service"]{
+  const query = `*[_type == "service"]|order(orderRank){
     _id,
-    name,
+    name, 
     details,
     slug,
     "imageUrl": serviceImage.asset->url,
