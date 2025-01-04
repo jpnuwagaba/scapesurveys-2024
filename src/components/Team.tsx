@@ -40,7 +40,7 @@ const Team = () => {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="tracking-tighter text-3xl md:text-4xl font-bold text-blue text-center">
-              Meet Our Team
+              The Team
             </h2>
             <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Our talented team of experts is dedicated to delivering
