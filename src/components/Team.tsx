@@ -52,7 +52,7 @@ const Team = () => {
           {team.map((member, index) => (
             <div key={index} className="bg-white rounded-lg">
               <img
-                className="h-[280px] w-full rounded-t-lg object-cover"
+                className="h-[280px] w-full rounded-t-lg object-cover object-top"
                 src={member.image}
                 alt={member.name}
                 width={400}
