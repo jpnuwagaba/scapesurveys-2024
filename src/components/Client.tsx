@@ -16,7 +16,7 @@ interface Props {
 
 const Client: FC<Props> = ({ name, logo }) => {
   return (
-    <div className="h-36 w-36 p-4 flex flex-col justify-center items-center shadow-lg">
+    <div className="h-36 w-36 rounded-md p-4 flex flex-col justify-center items-center shadow-lg">
       <img src={urlFor(logo).url()} alt={name} className="" />
     </div>
   );
