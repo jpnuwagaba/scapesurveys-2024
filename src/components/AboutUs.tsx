@@ -11,7 +11,7 @@ const AboutUs = () => {
         child1={
           <>
             <Image
-              src="/assets/about.jpeg"
+              src="/assets/about2.jpeg"
               width={500}
               height={100}
               className="w-full"
